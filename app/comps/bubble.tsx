@@ -1,7 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 
-const logos = [
+type Group = 1 | 2 | 3 | 4;
+
+type Logo = {
+  src: string;
+  x: string;
+  y: string;
+  group: Group;
+};
+
+const logos: Logo[] = [
   // group 1
   
   { src: "/logo/postgre.png", x: "25vw", y: "-32vh", group: 1 },
@@ -29,7 +38,7 @@ const logos = [
 
 ];
 
-const groupDelays = {
+const groupDelays: Record<Group, number> = {
   1: 0,
   2: 1,
   3: 2,
